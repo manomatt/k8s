@@ -7,7 +7,7 @@ spec:
   - name: producer
     image: ubuntu
     command: ["/bin/bash"]
-    args: ["-c", "echo $(hostname) $(date) >> /var/log/index.html"]
+    args: ["-c", "echo $(hostname) $(date) >> /var/log/index.html; while true; do echo $(hostname) $(date); sleep 10; done"]
     volumeMounts:
     - name: webcontent
       mountPath: /var/log
